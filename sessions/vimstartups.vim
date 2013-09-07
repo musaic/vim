@@ -1,0 +1,234 @@
+" /Volumes/LaCie6T/Repos/vim-1/sessions/vimstartups.vim:
+" Vim session script.
+" Created by session.vim 2.4.8 on 30 August 2013 at 01:28:58.
+" Open this file in Vim and run :source % to restore your session.
+
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+let g:session_default_to_last = 0
+let g:session_persist_globals = ['g:session_autoload', 'g:session_autosave', 'g:session_default_to_last', 'g:session_persist_globals']
+if exists('g:syntax_on') != 1 | syntax on | endif
+if exists('g:did_load_filetypes') != 1 | filetype on | endif
+if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
+if exists('g:did_indent_on') != 1 | filetype indent on | endif
+if &background != 'light'
+	set background=light
+endif
+if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+call setqflist([])
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /Volumes/LaCie6T/Repos/vim-1
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +651 ~/.vimrc
+badd +1 vundle-plugins.vim
+badd +1 -MiniBufExplorer-
+badd +43 /usr/local/Cellar/macvim/7.4-70/MacVim.app/Contents/Resources/vim/runtime/doc/help.txt
+badd +2 \[Vundle]\ clean
+badd +1 vundle/bufexplorer.zip/doc/bufexplorer.txt
+badd +0 /Volumes/LaCie6T/Repos/dotconfig/examples/zshrc
+silent! argdel *
+edit vundle-plugins.vim
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
+wincmd w
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe '1resize ' . ((&lines * 7 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 84 + 82) / 165)
+exe '2resize ' . ((&lines * 19 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 84 + 82) / 165)
+exe '3resize ' . ((&lines * 18 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 84 + 82) / 165)
+exe 'vert 4resize ' . ((&columns * 80 + 82) / 165)
+" argglobal
+enew
+" file \[BufExplorer]
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
+" argglobal
+setlocal fdm=expr
+setlocal fde=getline(v:lnum)=~'^\"\"'?'>'.(matchend(getline(v:lnum),'\"\"*')-2):'='
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 224 - ((219 * winheight(0) + 9) / 19)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+224
+normal! 01|
+wincmd w
+" argglobal
+edit ~/.vimrc
+setlocal fdm=expr
+setlocal fde=getline(v:lnum)=~'^\"\"'?'>'.(matchend(getline(v:lnum),'\"\"*')-2):'='
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 858 - ((855 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+858
+normal! 0
+wincmd w
+" argglobal
+edit vundle/bufexplorer.zip/doc/bufexplorer.txt
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+silent! normal! zE
+let s:l = 226 - ((22 * winheight(0) + 23) / 46)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+226
+normal! 052|
+wincmd w
+exe '1resize ' . ((&lines * 7 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 84 + 82) / 165)
+exe '2resize ' . ((&lines * 19 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 84 + 82) / 165)
+exe '3resize ' . ((&lines * 18 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 84 + 82) / 165)
+exe 'vert 4resize ' . ((&columns * 80 + 82) / 165)
+tabedit /Volumes/LaCie6T/Repos/dotconfig/examples/zshrc
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 124 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 40 + 82) / 165)
+" argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 58 - ((15 * winheight(0) + 22) / 45)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+58
+normal! 0
+lcd /Volumes/LaCie6T/Repos/vim-1
+wincmd w
+" argglobal
+edit /Volumes/LaCie6T/Repos/dotconfig/examples
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 10 - ((9 * winheight(0) + 22) / 45)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+10
+normal! 0
+lcd /Volumes/LaCie6T/Repos/vim-1
+wincmd w
+exe 'vert 1resize ' . ((&columns * 124 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 40 + 82) / 165)
+tabnext 2
+if exists('s:wipebuf')
+"   silent exe 'bwipe ' . s:wipebuf
+endif
+" unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+
+" Support for special windows like quick-fix and plug-in windows.
+" Everything down here is generated by vim-session (not supported
+" by :mksession out of the box).
+
+tabnext 1
+1wincmd w
+let s:bufnr_save = bufnr("%")
+let s:cwd_save = getcwd()
+BufExplorer
+if !getbufvar(s:bufnr_save, '&modified')
+  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
+  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
+    silent execute 'bwipeout' s:bufnr_save
+  endif
+endif
+execute "cd" fnameescape(s:cwd_save)
+1resize 7|vert 1resize 84|2resize 19|vert 2resize 84|3resize 17|vert 3resize 84|4resize 45|vert 4resize 80|
+tabnext 2
+2wincmd w
+let s:bufnr_save = bufnr("%")
+let s:cwd_save = getcwd()
+edit /Volumes/LaCie6T/Repos/dotconfig/examples
+if !getbufvar(s:bufnr_save, '&modified')
+  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
+  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
+    silent execute 'bwipeout' s:bufnr_save
+  endif
+endif
+execute "cd" fnameescape(s:cwd_save)
+1resize 45|vert 1resize 124|2resize 45|vert 2resize 40|
+tabnext 2
+1wincmd w
+if exists('s:wipebuf')
+  if empty(bufname(s:wipebuf))
+if !getbufvar(s:wipebuf, '&modified')
+  let s:wipebuflines = getbufline(s:wipebuf, 1, '$')
+  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
+    silent execute 'bwipeout' s:wipebuf
+  endif
+endif
+  endif
+endif
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: ft=vim ro nowrap smc=128

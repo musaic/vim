@@ -1,0 +1,647 @@
+snippet am "am"
+alias_method :${1:new_name}, :${2:old_name}
+
+endsnippet
+
+snippet as "as"
+assert ${1:test}, "${2:failure_message}"
+
+endsnippet
+
+snippet asam "asam"
+assert_alias_method ${1:object}, ${2:alias_name}, ${3:original_name}
+
+endsnippet
+
+snippet asb "asb"
+assert_boolean ${1:actual}
+
+endsnippet
+
+snippet asc "asc"
+assert_compare ${1:expected}, ${2:operator}, ${3:actual}
+
+endsnippet
+
+snippet ascd "ascd"
+assert_const_defined ${1:object}, ${2:constant_name}
+
+endsnippet
+
+snippet ase "ase"
+assert_equal ${1:expected}, ${2:actual}
+
+endsnippet
+
+snippet asem "asem"
+assert_empty ${1:object}
+
+endsnippet
+
+snippet asf "asf"
+assert_false ${1:actual}
+
+endsnippet
+
+snippet asfa "asfa"
+assert_fail_assertion { ${1:block} }
+
+endsnippet
+
+snippet asi "asi"
+assert_include ${1:collection}, ${2:object}
+
+endsnippet
+
+snippet asid "asid"
+assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:delta_float}
+
+endsnippet
+
+snippet asie "asie"
+assert_in_epsilon ${1:expected_float}, ${2:actual_float}
+
+endsnippet
+
+snippet asio "asio"
+assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}
+
+endsnippet
+
+snippet asko "asko"
+assert_kind_of ${1:ExpectedKind}, ${2:actual_instance}
+
+endsnippet
+
+snippet asm "asm"
+assert_match /${1:expected_pattern}/, ${2:actual_string}
+
+endsnippet
+
+snippet asn "asn"
+assert_nil ${1:instance}
+
+endsnippet
+
+snippet asncd "asncd"
+assert_not_const_defined ${1:object}, ${2:constant_name}
+
+endsnippet
+
+snippet asne "asne"
+assert_not_equal ${1:unexpected}, ${2:actual}
+
+endsnippet
+
+snippet asnem "asnem"
+assert_not_empty ${1:object}
+
+endsnippet
+
+snippet asni "asni"
+assert_not_include ${1:collection}, ${2:object}
+
+endsnippet
+
+snippet asnid "asnid"
+assert_not_in_delta ${1:expected_float}, ${2:actual_float}
+
+endsnippet
+
+snippet asnie "asnie"
+assert_not_in_epsilon ${1:expected_float}, ${2:actual_float}
+
+endsnippet
+
+snippet asnm "asnm"
+assert_no_match /${1:unexpected_pattern}/, ${2:actual_string}
+
+endsnippet
+
+snippet asnn "asnn"
+assert_not_nil ${1:instance}
+
+endsnippet
+
+snippet asnp "asnp"
+assert_not_predicate ${1:object}, ${2:predicate}
+
+endsnippet
+
+snippet asnr "asnr"
+assert_nothing_raised { ${1:block} }
+
+endsnippet
+
+snippet asnrt "asnrt"
+assert_not_respond_to ${1:object}, ${2:method}
+
+endsnippet
+
+snippet asns "asns"
+assert_not_same ${1:unexpected}, ${2:actual}
+
+endsnippet
+
+snippet asnse "asnse"
+assert_not_send ${1:send_array}
+
+endsnippet
+
+snippet asnt "asnt"
+assert_nothing_thrown { ${1} }
+
+endsnippet
+
+snippet aso "aso"
+assert_operator ${1:left}, :${2:operator}, ${3:right}
+
+endsnippet
+
+snippet asp "asp"
+assert_predicate ${1:object}, ${2:predicate}
+
+endsnippet
+
+snippet aspe "aspe"
+assert_path_exist ${1:path}
+
+endsnippet
+
+snippet aspne "aspne"
+assert_path_not_exist ${1:path}
+
+endsnippet
+
+snippet asr "asr"
+assert_raise(${1:Exception}) { ${2} }
+
+endsnippet
+
+snippet asrko "asrko"
+assert_raise_kind_of(${1:kinds...}) { ${2:block} }
+
+endsnippet
+
+snippet asrm "asrm"
+assert_raise_message ${1:expected_message}
+
+endsnippet
+
+snippet asrt "asrt"
+assert_respond_to ${1:object}, :${2:method}
+
+endsnippet
+
+snippet asse "asse"
+assert_send ${1:send_array}
+
+endsnippet
+
+snippet ast "ast"
+assert_throws(:${1:expected}) { ${2} }
+
+endsnippet
+
+snippet astr "astr"
+assert_true ${1:actual}
+
+endsnippet
+
+snippet bm "bm"
+TESTS = ${1:10_000}
+Benchmark.bmbm do |results|
+	${2}
+end
+
+endsnippet
+
+snippet case "case"
+case ${1}
+when ${2}
+else
+	${3}
+end
+
+endsnippet
+
+snippet class "class"
+class ${1:`!v Snippet_RubyClassNameFromFilename()`}${2}
+	${3}
+end
+
+endsnippet
+
+snippet classe "classe"
+class ${1:ErrorClassName} < ${2:StandardError}; end${3}
+
+endsnippet
+
+snippet def "def"
+def ${1:name}
+	${2}
+end
+
+endsnippet
+
+snippet defi "defi"
+def initialize${1}
+	${2}
+end
+
+endsnippet
+
+snippet defmm "defmm"
+def method_missing(meth, *args, &blk)
+	${1}
+end
+
+endsnippet
+
+snippet defs "defs"
+def self.${1:class_method_name}
+	${2}
+end
+
+endsnippet
+
+snippet deft "deft"
+def test_${1:case_name}
+	${2}
+end
+
+endsnippet
+
+snippet detect "detect"
+detect { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet detecto "detecto"
+detect do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet dglob "dglob"
+Dir.glob(${1:"<+dir}"+>) { |${2:file}| ${3} }
+
+endsnippet
+
+snippet do "do"
+do
+	${1}
+end
+
+endsnippet
+
+snippet dop "dop"
+do |${1:param}|
+	${2}
+end
+
+endsnippet
+
+snippet ea "ea"
+each { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet each "each"
+each { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet each_with_index "each_with_index"
+each_with_index { |${1:element},${2:i}| ${3:} }
+
+endsnippet
+
+snippet each_with_indexo "each_with_indexo"
+each_with_index do |${1:element},${2:i}|
+	${3:body}
+end
+
+
+endsnippet
+
+snippet eacho "eacho"
+each do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet eado "eado"
+each do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet eawi "eawi"
+each_with_index { |${1:element},${2:i}| ${3:} }
+
+endsnippet
+
+snippet eawido "eawido"
+each_with_index do |${1:element},${2:i}|
+	${3:body}
+end
+
+
+endsnippet
+
+snippet elsif "elsif"
+elsif ${1:condition}
+	${2}
+
+endsnippet
+
+snippet fileeach "fileeach"
+File.foreach(${1:"<+path}"+>) { |${2:line}| ${3} }
+
+endsnippet
+
+snippet fopen "fopen"
+File.open(${1:path}, "${2:rwab}") { |${3:file}| ${4} }
+
+endsnippet
+
+snippet fread "fread"
+File.read(${1})
+
+endsnippet
+
+snippet http_get "http_get"
+require 'net/http'
+res = Net::HTTP.get URI.parse('${1:url}')
+
+endsnippet
+
+snippet http_post "http_post"
+require 'net/http'
+res = Net::HTTP.post_form URI.parse('${1:url}')${2:, params}
+
+endsnippet
+
+snippet if "if"
+if ${1:condition}
+	${2}
+end
+
+endsnippet
+
+snippet ife "ife"
+if ${1:condition}
+	${2}
+else
+end
+
+endsnippet
+
+snippet inj "inj"
+inject(${1:init}) { |${2:total}, ${3:next}| ${4:body} }
+
+endsnippet
+
+snippet injdo "injdo"
+inject(${1:init}) do |${2:total}, ${3:next}|
+	${4:body}
+end
+
+endsnippet
+
+snippet inject "inject"
+inject { |${1:total},${2:next}| ${3:body} }
+
+endsnippet
+
+snippet injecto "injecto"
+inject do |${1:total},${2:next}|
+	${3:body}
+end
+
+endsnippet
+
+snippet ip "ip"
+ip_addr = request.env['REMOTE_ADDR']
+
+endsnippet
+
+snippet map "map"
+map { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet mapdo "mapdo"
+map do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet mapo "mapo"
+map do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet Md "Md"
+File.open(${1:dump_path}, "wb") { |${2:file}| Marshal.dump(${3:obj}, ${4:$2}) }
+
+endsnippet
+
+snippet Ml "Ml"
+File.open(${1:dump_path}, "rb") { |${2:file}| Marshal.load(${3:$2}) }
+
+endsnippet
+
+snippet mod "mod"
+module ${1:`!v Snippet_RubyClassNameFromFilename()`}
+	${2}
+end
+
+endsnippet
+
+snippet module "module"
+module ${1:`!v Snippet_RubyClassNameFromFilename()`}
+	module ClassMethods
+		${2}
+	end
+
+	module InstanceMethods
+
+	end
+
+	def self.included(receiver)
+		receiver.extend         ClassMethods
+		receiver.send :include, InstanceMethods
+	end
+end
+
+endsnippet
+
+snippet nam "nam"
+namespace :${1:namespace} do
+	${2}
+end
+
+endsnippet
+
+snippet ope "ope"
+open(${1:path}, "${2:rwab}") { |${3:io}| ${4} }
+
+endsnippet
+
+snippet pathhere "pathhere"
+File.join(File.dirname(__FILE__), *%w[${1:rel_path_here}])
+
+endsnippet
+
+snippet Pn "Pn"
+PStore.new(${1})
+
+endsnippet
+
+snippet r "r"
+attr_reader :${1:attr_names}
+
+endsnippet
+
+snippet reject "reject"
+reject { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet rejecto "rejecto"
+reject do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet rep "rep"
+results.report("${1:name}:") { TESTS.times { ${2} } }
+
+endsnippet
+
+snippet rw "rw"
+attr_accessor :${1:attr_names}
+
+endsnippet
+
+snippet select "select"
+select { |${1:element}| ${2:body} }
+
+endsnippet
+
+snippet selecto "selecto"
+select do |${1:element}|
+	${2:body}
+end
+
+endsnippet
+
+snippet sinc "sinc"
+class << self; self end
+
+endsnippet
+
+snippet sort "sort"
+sort { |${1:x},${2:y}| ${3:body} }
+
+endsnippet
+
+snippet sorto "sorto"
+sort do |${1:x},${2:y}|
+	${3:body}
+end
+
+endsnippet
+
+snippet tas "tas"
+desc "${1:Task description}"
+task :${2:task_name}${3: => [:dependent, :tasks]} do
+	${4}
+end
+
+endsnippet
+
+snippet task "task"
+desc "${1:Task description}"
+task :${2:task_name}${3: => [:dependent, :tasks]} do
+	${4}
+end
+
+endsnippet
+
+snippet tc "tc"
+require "test/unit"
+
+require "${1:library_file_name}"
+
+class Test${2:`!v Snippet_RubyClassNameFromFilename()`} < Test::Unit::TestCase
+	def test_${3:case_name}
+		${4}
+	end
+end
+
+endsnippet
+
+snippet unless "unless"
+unless ${1:condition}
+	${2}
+end
+
+endsnippet
+
+snippet unlesse "unlesse"
+unless ${1:condition}
+	${2}
+else
+end
+
+endsnippet
+
+snippet w "w"
+attr_writer :${1:attr_names}
+
+endsnippet
+
+snippet while "while"
+while ${1:condition}
+	${2}
+end
+
+endsnippet
+
+snippet xmlr "xmlr"
+REXML::Document.new(File.read(${1:path}))
+
+endsnippet
+
+snippet xpa "xpa"
+elements.each(${1}) do |${2:node}|
+	${3}
+end
+
+endsnippet
+
+snippet Yd "Yd"
+File.open(${1:path_to_yml}, "w") { |${2:file}| YAML.dump(${3:obj}, ${4:$2}) }
+
+endsnippet
+
+snippet Yl "Yl"
+File.open(${1:path_to_yml}) { |${2:file}| YAML.load(${3:$2}) }
+
+endsnippet
+
+snippet zip "zip"
+zip(${1:enums}) { |${2:row}| ${3} }
+
+endsnippet
+

@@ -1,0 +1,72 @@
+snippet call "call"
+	<xsl:call-template name="${1:template}">
+		${2}
+	</xsl:call-template>
+
+endsnippet
+
+snippet choose "choose"
+	<xsl:choose>
+		<xsl:when test="${1:test}">
+			${2}
+		</xsl:when>
+		<xsl:otherwise>
+		</xsl:otherwise>
+	</xsl:choose>
+
+endsnippet
+
+snippet mat "mat"
+	<xsl:template match="${1:match}"/>
+		${2}
+	</xsl:template> 
+
+endsnippet
+
+snippet out "out"
+	<xsl:output omit-xml-declaration="${1:yes}" method="${2:html}"/>
+
+endsnippet
+
+snippet param "param"
+	<xsl:param name="${1:name}" />
+
+endsnippet
+
+snippet sty "sty"
+	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	${1}
+	</xsl:stylesheet>
+
+endsnippet
+
+snippet tem "tem"
+	<xsl:template name="${1:name}">
+		${2}
+	</xsl:template>
+
+endsnippet
+
+snippet value "value"
+	<xsl:value-of select="${1:select}"/>
+
+endsnippet
+
+snippet var "var"
+	<xsl:variable name="${1:name}"/>
+		${2}
+	</xsl:variable>
+
+endsnippet
+
+snippet wparam "wparam"
+	<xsl:with-param name="${1:name}" select="${2:select}" />
+
+endsnippet
+
+snippet xdec "xdec"
+	<?xml version="1.0" ecoding="${1:encoding}"?>
+	${2}
+
+endsnippet
+

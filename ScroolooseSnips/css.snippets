@@ -1,0 +1,180 @@
+snippet # "#"
+#${1:id} {
+  ${2}
+}
+
+endsnippet
+
+snippet cl "cl"
+.${1:class} {
+  ${2:color: pink;}
+}
+
+endsnippet
+
+snippet clear "clear"
+clear: ${1:left/right/both/none};$0
+
+endsnippet
+
+snippet color "color"
+color: #${1:DDD};$0
+
+endsnippet
+
+snippet colorn "colorn"
+color: ${1:red};$0
+
+endsnippet
+
+snippet colorr "colorr"
+color: rgb(${1:255},${2:255},${3:255});$0
+
+endsnippet
+
+snippet cursor "cursor"
+cursor: ${1:default/auto/crosshair/pointer/move/*-resize/text/wait/help};$0
+
+endsnippet
+
+snippet cursuru "cursuru"
+cursor: url($1);$0
+
+endsnippet
+
+snippet direction "direction"
+direction: ${1:ltr|rtl};$0
+
+endsnippet
+
+snippet float "float"
+float: ${1:left/right/none};$0
+
+endsnippet
+
+snippet i "i"
+${1:!important}
+
+endsnippet
+
+snippet letter "letter"
+letter-spacing: ${1}${2:em/px};$0
+
+endsnippet
+
+snippet letterem "letterem"
+letter-spacing: $1em;$0
+
+endsnippet
+
+snippet letterpx "letterpx"
+letter-spacing: $1px;$0
+
+endsnippet
+
+snippet margin "margin"
+margin: ${1:20px} ${2:0px} ${3:40px} ${4:0px};$0
+
+endsnippet
+
+snippet marginb "marginb"
+margin-bottom: ${1:20px};$0
+
+endsnippet
+
+snippet marginl "marginl"
+margin-left: ${1:20px};$0
+
+endsnippet
+
+snippet marginr "marginr"
+margin-right: ${1:20px};$0
+
+endsnippet
+
+snippet margint "margint"
+margin-top: ${1:20px};$0
+
+endsnippet
+
+snippet opacity "opacity"
+opacity: ${1:0.5};${100:
+}-moz-opacity: ${1:0.5};${100:
+}filter:alpha(opacity=${2:${1/(1?)0?\.(.*)/$1$2/}${1/^\d*\.\d\d+$|^\d*$|(^\d\.\d$)/(?1:0)/}});$0
+
+endsnippet
+
+snippet overflow "overflow"
+overflow: ${1:visible/hidden/scroll/auto};$0
+
+endsnippet
+
+snippet padding "padding"
+padding: ${1:20px} ${2:0px} ${3:40px} ${4:0px};$0
+
+endsnippet
+
+snippet paddingb "paddingb"
+padding-bottom: ${1:20px};$0
+
+endsnippet
+
+snippet paddingl "paddingl"
+padding-left: ${1:20px};$0
+
+endsnippet
+
+snippet paddingr "paddingr"
+padding-right: ${1:20px};$0
+
+endsnippet
+
+snippet paddingt "paddingt"
+padding-top: ${1:20px};$0
+
+endsnippet
+
+snippet position "position"
+position: ${1:static/relative/absolute/fixed};$0
+
+endsnippet
+
+snippet scrollbar "scrollbar"
+scrollbar-base-color:       ${1:#CCCCCC};${2:
+scrollbar-arrow-color:      ${3:#000000};
+scrollbar-track-color:      ${4:#999999};
+scrollbar-3dlight-color:    ${5:#EEEEEE};
+scrollbar-highlight-color:  ${6:#FFFFFF};
+scrollbar-face-color:       ${7:#CCCCCC};
+scrollbar-shadow-color:     ${9:#999999};
+scrollbar-darkshadow-color: ${8:#666666};}
+
+endsnippet
+
+snippet tag "tag"
+${1:tag} {
+  ${2:color: pink;}
+}
+
+endsnippet
+
+snippet vertical "vertical"
+vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};$0
+
+endsnippet
+
+snippet visibility "visibility"
+vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};$0
+
+endsnippet
+
+snippet white "white"
+white-space: ${1:normal/pre/nowrap};$0
+
+endsnippet
+
+snippet z "z"
+z-index: $1;$0
+
+endsnippet
+

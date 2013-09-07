@@ -1,0 +1,693 @@
+snippet art "art"
+assert_redirected_to ${1::action => "${2:index}"}
+
+endsnippet
+
+snippet artnp "artnp"
+assert_redirected_to <+<+parent+>_<+child+>_path(<+@<+parent+>+>, <+@<+child+>+>)+>
+
+endsnippet
+
+snippet artnpp "artnpp"
+assert_redirected_to <+<+parent+>_<+child+>_path(<+@<+parent+>+>)+>
+
+endsnippet
+
+snippet artp "artp"
+assert_redirected_to <+<+model+>_path(<+@<+model+>+>)+>
+
+endsnippet
+
+snippet artpp "artpp"
+assert_redirected_to <+<+model+>s_path+>
+
+endsnippet
+
+snippet asd "asd"
+assert_difference "${1:Model}.${2:count}", $1 do
+	${3}
+end
+
+endsnippet
+
+snippet asnd "asnd"
+assert_no_difference "${1:Model}.${2:count}" do
+	${3}
+end
+
+endsnippet
+
+snippet asre "asre"
+assert_response :${1:success}, @response.body${2}
+
+endsnippet
+
+snippet asrj "asrj"
+assert_rjs :<+replace+>, <+"<+dom id+>"+>
+
+endsnippet
+
+snippet ass "ass"
+assert_select '<+path+>'<+, :<+text+> => <+'<+inner_html+>'+>+> <+do<++>+>
+
+endsnippet
+
+snippet bf "bf"
+before_filter :${1:method}
+
+endsnippet
+
+snippet bt "bt"
+belongs_to :${1:association}
+
+endsnippet
+
+snippet crw "crw"
+cattr_accessor :${1:attr_names}
+
+endsnippet
+
+snippet defcreate "defcreate"
+def create
+	@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
+
+	respond_to do |wants|
+		if @$1.save
+			flash[:notice] = '$2 was successfully created.'
+			wants.html { redirect_to(@$1) }
+			wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+		else
+			wants.html { render :action => "new" }
+			wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+		end
+	end
+end${3}
+
+endsnippet
+
+snippet defdestroy "defdestroy"
+def destroy
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+	@$1.destroy
+
+	respond_to do |wants|
+		wants.html { redirect_to($1s_url) }
+		wants.xml  { head :ok }
+	end
+end${3}
+
+endsnippet
+
+snippet defedit "defedit"
+def edit
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+end
+
+endsnippet
+
+snippet defindex "defindex"
+def index
+	@${1:model_class_name} = ${2:ModelClassName}.all
+
+	respond_to do |wants|
+		wants.html # index.html.erb
+		wants.xml  { render :xml => @$1s }
+	end
+end${3}
+
+endsnippet
+
+snippet defnew "defnew"
+def new
+	@${1:model_class_name} = ${2:ModelClassName}.new
+
+	respond_to do |wants|
+		wants.html # new.html.erb
+		wants.xml  { render :xml => @$1 }
+	end
+end${3}
+
+endsnippet
+
+snippet defshow "defshow"
+def show
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+
+	respond_to do |wants|
+		wants.html # show.html.erb
+		wants.xml  { render :xml => @$1 }
+	end
+end${3}
+
+endsnippet
+
+snippet defupdate "defupdate"
+def update
+	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+
+	respond_to do |wants|
+		if @$1.update_attributes(params[:$1])
+			flash[:notice] = '$2 was successfully updated.'
+			wants.html { redirect_to(@$1) }
+			wants.xml  { head :ok }
+		else
+			wants.html { render :action => "edit" }
+			wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+		end
+	end
+end${3}
+
+endsnippet
+
+snippet fina "fina"
+find(:all<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+
+endsnippet
+
+snippet finf "finf"
+find(:first<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+
+endsnippet
+
+snippet fini "fini"
+find(<+id+>)
+
+endsnippet
+
+snippet finl "finl"
+find(:last<+, :conditions => ['<+<+field+> = ?+>', <+true+>]+>)
+
+endsnippet
+
+snippet flash "flash"
+flash[:${1:notice}] = "${2}"
+
+endsnippet
+
+snippet habtm "habtm"
+has_and_belongs_to_many :${1:object}, :join_table => "${2:table_name}", :foreign_key => "${3}_id"${4}
+
+endsnippet
+
+snippet hm "hm"
+has_many :${1:object}
+
+endsnippet
+
+snippet hmd "hmd"
+has_many :<+object+>s<+, :class_name => "<+object+>", :foreign_key => "<+reference+>_id"+>, :dependent => :destroy<++>
+
+endsnippet
+
+snippet hmt "hmt"
+has_many :${1:object}, :through => :${2:object}
+
+endsnippet
+
+snippet ho "ho"
+has_one :${1:object}
+
+endsnippet
+
+snippet i18 "i18"
+I18n.t('${1:type.key}')${2}
+
+endsnippet
+
+snippet ist "ist"
+<%= image_submit_tag("<+agree.png+>"<+<+, :id => "<+id+>"+><+, :name => "<+name+>"+><+, :class => "<+class+>"+><+, :disabled => <+false+>+>+>) %>
+
+endsnippet
+
+snippet log "log"
+RAILS_DEFAULT_LOGGER.${1:debug} ${2}
+
+endsnippet
+
+snippet logd "logd"
+logger.debug { "${1:message}" }${2}
+
+endsnippet
+
+snippet loge "loge"
+logger.error { "${1:message}" }${2}
+
+endsnippet
+
+snippet logf "logf"
+logger.fatal { "${1:message}" }${2}
+
+endsnippet
+
+snippet logi "logi"
+logger.info { "${1:message}" }${2}
+
+endsnippet
+
+snippet logw "logw"
+logger.warn { "${1:message}" }${2}
+
+endsnippet
+
+snippet mac "mac"
+add_column :${1:table}, :${2:column}, :${3:type}
+
+endsnippet
+
+snippet mapc "mapc"
+${1:map}.${2:connect} '${3:controller/:action/:id}'
+
+endsnippet
+
+snippet mapca "mapca"
+${1:map}.catch_all "*${2:anything}", :controller => "${3:default}", :action => "${4:error}"${5}
+
+endsnippet
+
+snippet mapr "mapr"
+${1:map}.resource :${2:resource}
+
+endsnippet
+
+snippet maprs "maprs"
+${1:map}.resources :${2:resource}
+
+endsnippet
+
+snippet mapwo "mapwo"
+${1:map}.with_options :${2:controller} => '${3:thing}' do |$3|
+	${4}
+end
+
+endsnippet
+
+snippet mbs "mbs"
+before_save :${1:method}
+
+endsnippet
+
+snippet mcc "mcc"
+change_column :${1:table}, :${2:column}, :${3:type}
+
+endsnippet
+
+snippet mccc "mccc"
+t.column :${1:title}, :${2:string}
+
+endsnippet
+
+snippet mcht "mcht"
+change_table :${1:table_name} do |t|
+	${2}
+end
+
+endsnippet
+
+snippet mcol "mcol"
+remove_column :${1:table}, :${2:column}
+
+endsnippet
+
+snippet mct "mct"
+create_table :${1:table_name} do |t|
+	t.column :${2:name}, :${3:type}
+end
+
+endsnippet
+
+snippet migration "migration"
+class ${1:`!v Snippet_MigrationNameFromFilename()`} < ActiveRecord::Migration
+	def self.up
+		${2}
+	end
+
+	def self.down
+	end
+end
+
+endsnippet
+
+snippet mp "mp"
+map(&:${1:id})
+
+endsnippet
+
+snippet mrc "mrc"
+remove_column :${1:column}
+
+endsnippet
+
+snippet mrmc "mrmc"
+remove_column :${1:table}, :${2:column}
+
+endsnippet
+
+snippet mrnc "mrnc"
+rename_column :${1:table}, :${2:old}, :${3:new}
+
+endsnippet
+
+snippet mrw "mrw"
+mattr_accessor :${1:attr_names}
+
+endsnippet
+
+snippet nc "nc"
+named_scope :<+name+><+, :joins => :<+table+>+>, :conditions => <+['<+<+field+> = ?+>', <+true+>]+>
+
+endsnippet
+
+snippet ncl "ncl"
+named_scope :<+name+>, lambda { |<+param+>| { :conditions => <+['<+<+field+> = ?+>', <+param+>]+> } }
+
+endsnippet
+
+snippet pa "pa"
+params[:${1:id}]${2}
+
+endsnippet
+
+snippet ra "ra"
+render :action => "${1:action}"
+
+endsnippet
+
+snippet ral "ral"
+render :action => "${1:action}", :layout => "${2:layoutname}"
+
+endsnippet
+
+snippet rest "rest"
+respond_to do |wants|
+	wants.${1:html} <+{ <++> }+>
+end
+
+endsnippet
+
+snippet rf "rf"
+render :file => "${1:filepath}"
+
+endsnippet
+
+snippet rfu "rfu"
+render :file => "${1:filepath}", :use_full_path => ${2:false}
+
+endsnippet
+
+snippet ri "ri"
+render :inline => "<+<%= 'hello' %>+>"
+
+endsnippet
+
+snippet ril "ril"
+render :inline => "${1:<%= 'hello' %>}", :locals => { ${2::name} => "${3:value}"${4} }
+
+endsnippet
+
+snippet rit "rit"
+render :inline => "${1:<%= 'hello' %>}", :type => ${2::rxml}
+
+endsnippet
+
+snippet rjson "rjson"
+render :json => ${1:text to render}
+
+endsnippet
+
+snippet rl "rl"
+render :layout => "${1:layoutname}"
+
+endsnippet
+
+snippet rn "rn"
+render :nothing => ${1:true}
+
+endsnippet
+
+snippet rns "rns"
+render :nothing => ${1:true}, :status => ${2:401}
+
+endsnippet
+
+snippet rp "rp"
+render :partial => "${1:item}"
+
+endsnippet
+
+snippet rpc "rpc"
+render :partial => "<+item+>", :collection => <+@<+item+>s+>
+
+endsnippet
+
+snippet rpl "rpl"
+render :partial => "<+item+>", :locals => { :<+item+> => <+@<+item+>+><++> }
+
+endsnippet
+
+snippet rpo "rpo"
+render :partial => "<+item+>", :object => <+@<+item+>+>
+
+endsnippet
+
+snippet rps "rps"
+render :partial => "${1:item}", :status => ${2:500}
+
+endsnippet
+
+snippet rt "rt"
+render :text => "${1:text to render}"
+
+endsnippet
+
+snippet rtl "rtl"
+render :text => "${1:text to render}", :layout => "${2:layoutname}"
+
+endsnippet
+
+snippet rtlt "rtlt"
+render :text => "${1:text to render}", :layout => ${2:true}
+
+endsnippet
+
+snippet rts "rts"
+render :text => "${1:text to render}", :status => ${2:401}
+
+endsnippet
+
+snippet ru "ru"
+render :update do |${1:page}|
+	$1.${2}
+end
+
+endsnippet
+
+snippet rxml "rxml"
+render :xml => ${1:text to render}
+
+endsnippet
+
+snippet sha1 "sha1"
+Digest::SHA1.hexdigest(${1:string})
+
+endsnippet
+
+snippet sweeper "sweeper"
+class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
+	observe $1
+
+	def after_save(${2:model_class_name})
+		expire_cache($2)
+	end
+
+	def after_destroy($2)
+		expire_cache($2)
+	end
+
+	def expire_cache($2)
+		expire_page
+	end
+end
+
+endsnippet
+
+snippet tcb "tcb"
+t.boolean :${1:title}
+${2}
+
+endsnippet
+
+snippet tcbi "tcbi"
+t.binary :<+title+><+, :limit => <+2+>.megabytes+>
+<++>
+
+endsnippet
+
+snippet tcd "tcd"
+t.decimal :<+title+><+<+, :precision => <+10+>+><+, :scale => <+2+>+>+>
+<++>
+
+endsnippet
+
+snippet tcda "tcda"
+t.date :${1:title}
+${2}
+
+endsnippet
+
+snippet tcdt "tcdt"
+t.datetime :${1:title}
+${2}
+
+endsnippet
+
+snippet tcf "tcf"
+t.float :${1:title}
+${2}
+
+endsnippet
+
+snippet tch "tch"
+t.change :<+name+><+, :<+string+><+, :<+limit+> => <+80+>+>+>
+<++>
+
+endsnippet
+
+snippet tci "tci"
+t.integer :${1:title}
+${2}
+
+endsnippet
+
+snippet tcl "tcl"
+t.integer :lock_version, :null => false, :default => 0
+${1}
+
+endsnippet
+
+snippet tcr "tcr"
+t.references :<+taggable+><+, :polymorphic => <+{ :default => '<+Photo+>' }+>+>
+<++>
+
+endsnippet
+
+snippet tcs "tcs"
+t.string :${1:title}
+${2}
+
+endsnippet
+
+snippet tct "tct"
+t.text :${1:title}
+${2}
+
+endsnippet
+
+snippet tcti "tcti"
+t.time :${1:title}
+${2}
+
+endsnippet
+
+snippet tcts "tcts"
+t.timestamp :${1:title}
+${2}
+
+endsnippet
+
+snippet tctss "tctss"
+t.timestamps
+${1}
+
+endsnippet
+
+snippet trc "trc"
+t.remove :${1:column}
+
+endsnippet
+
+snippet tre "tre"
+t.rename :<+old_column_name+>, :<+new_column_name+>
+<++>
+
+endsnippet
+
+snippet tref "tref"
+t.references :${1:model}
+
+endsnippet
+
+snippet va "va"
+validates_associated :${1:attribute}
+
+endsnippet
+
+snippet vao "vao"
+validates_acceptance_of :${1:terms}
+
+endsnippet
+
+snippet vc "vc"
+validates_confirmation_of :${1:attribute}
+
+endsnippet
+
+snippet ve "ve"
+validates_exclusion_of :${1:attribute}, :in => ${2:%w( mov avi )}
+
+endsnippet
+
+snippet vf "vf"
+validates_format_of :${1:attribute}, :with => /${2:regex}/
+
+endsnippet
+
+snippet vi "vi"
+validates_inclusion_of :${1:attribute}, :in => %w(${2: mov avi })
+
+endsnippet
+
+snippet vl "vl"
+validates_length_of :${1:attribute}, :within => ${2:3}..${3:20}
+
+endsnippet
+
+snippet vn "vn"
+validates_numericality_of :${1:attribute}
+
+endsnippet
+
+snippet vpo "vpo"
+validates_presence_of :${1:attribute}
+
+endsnippet
+
+snippet vu "vu"
+validates_uniqueness_of :${1:attribute}
+
+endsnippet
+
+snippet wants "wants"
+wants.<+js|xml|html+> <+{ <++> }+>
+
+endsnippet
+
+snippet xdelete "xdelete"
+xhr :delete, :${1:destroy}, :id => ${2:1}${3}
+
+endsnippet
+
+snippet xget "xget"
+xhr :get, :<+show+><+, :id => <+1+>+><++>
+
+endsnippet
+
+snippet xpost "xpost"
+xhr :post, :${1:create}, :${2:object} => { ${3} }
+
+endsnippet
+
+snippet xput "xput"
+xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}
+
+endsnippet
+

@@ -1,0 +1,1 @@
+/Users/ladmin/.vim/bundle-utils/Ultisnips/ftdetect/UltiSnips.vim

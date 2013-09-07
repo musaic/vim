@@ -1,0 +1,56 @@
+snippet anon "anon"
+function(${1}) { ${2} };
+
+endsnippet
+
+snippet for "for"
+for (var <+i+>=0; <+i+> < <+<+Things+>.length+>; <+i+>++) {
+<+<+Things+>[<+i+>]+>
+};
+
+endsnippet
+
+snippet fun "fun"
+function ${1:function_name} (${2:argument}) {
+	${3:// body}
+}
+
+endsnippet
+
+snippet if "if"
+if (${1:true}) { ${2} };
+
+endsnippet
+
+snippet ife "ife"
+if (${1:true}) {
+	${2}
+} else {
+};
+
+endsnippet
+
+snippet log "log"
+console.log(${1});
+
+endsnippet
+
+snippet met "met"
+${1:method_name}: function(${2:attribute}){
+  ${3}
+}${4:, }
+
+endsnippet
+
+snippet proto "proto"
+${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
+	${4:// body}
+};
+
+endsnippet
+
+snippet timeout "timeout"
+setTimeout(function() { ${1} }, ${2:10});
+
+endsnippet
+
